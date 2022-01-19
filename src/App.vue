@@ -1,57 +1,31 @@
 <template>
-  <div id="app">
-    <Webtoon :items="webtoons"/> 
-  </div>
 
+    <div>
+        <h1>{{title}}</h1>
+        <input v-model="title">
+    </div>
+    <div>
+        <input type="checkbox" id="선택" value="선택" v-model="checkedWebtoons">
+        <label for="선택">선택</label>
+        <input type="checkbox" id="선택-2" value="선택-2" v-model="checkedWebtoons">
+        <label for="선택-2">선택-2</label>
+        <br>
+        <span>선택 보기 : {{ checkedWebtoons }} </span>
+    </div>
 
- 
 </template>
 
 <script>
-import Webtoon from "./components/Webtoon";
+    export default {
+        data() {
+            return {
+                title: "",
+                checkedWebtoons:[],
+            };
+        },
 
-export default {
-   components: {
-    Webtoon
-  },
- 
- data() {
-    return {
-      webtoons: [
-        {
-          name: "햄스터와 그녀",
-          link: "http://webtoon.daum.net/webtoon/view/hamsterandher",
-          img:
-            "http://t1.daumcdn.net/webtoon/op/478cdf37f585607982ffa9e35b432e8503be8a54",
-         isUpdate : true
-        },
-        {
-          name: "프롬 스타",
-          link: "http://webtoon.daum.net/webtoon/view/fromstar",
-          img:
-            "http://t1.daumcdn.net/webtoon/op/a7fb953d722c1130bfc18440f7e3ce448ece57a1",
-         isUpdate : true
-        },
-        {
-          name: "위대한 로맨스",
-          link: "http://webtoon.daum.net/webtoon/view/greatromance",
-          img:
-            "http://t1.daumcdn.net/webtoon/op/a816281cb4df5c50a20ac386fd6e496643d0f085",
-         isUpdate : true
-        },
-        {
-          name: "빛나는 손을",
-          link: "http://webtoon.daum.net/webtoon/view/Hand",
-          img: "http://t1.daumcdn.net/cartoon/5913FCAC0234C50001",
-         isUpdate : true
-        }        
-      ]
+
     };
-  },
-
-};
 </script>
 <style scoped>
 </style>
-
-
