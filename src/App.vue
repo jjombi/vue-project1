@@ -12,7 +12,9 @@
         <br>
         <span>선택 보기 : {{ checkedWebtoons }} </span>
     </div>
-
+  const rand = Math.floor(Math.random() *4);
+        if (rand==4) rand=0;
+        alert(this.data[rand]);
 </template>
 
 <script>
